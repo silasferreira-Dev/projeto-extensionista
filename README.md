@@ -1,6 +1,6 @@
 # Unidos Pela Causa
 
-Sistema de gestão de doações para ONGs. Projeto de referência do PIE II, Aula 3: MVP sem login, com banco, API e telas integradas.
+Sistema de gestão de doações para ONGs com autenticação JWT, API Node.js/Express, banco MySQL e frontend Vite.
 
 ## Requisitos
 
