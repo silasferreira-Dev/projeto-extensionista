@@ -1,0 +1,146 @@
+:root {
+  --cor-principal: #162c54;
+  --cor-destaque: #2563af;
+  --cor-fundo: #f4f6f9;
+  --cor-erro: #b42318;
+  --cor-sucesso: #067647;
+  font-family: system-ui, sans-serif;
+  color: #1d2433;
+  background: var(--cor-fundo);
+}
+body {
+  margin: 0;
+}
+h1,
+h2 {
+  color: var(--cor-principal);
+}
+section {
+  padding: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.cartao {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px #0002;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+input,
+select,
+button {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #c5ccd6;
+}
+button {
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button.secundario {
+  background: #e3e8ef;
+  color: #1d2433;
+}
+button.perigo {
+  background: var(--cor-erro);
+}
+button:disabled {
+  opacity: 0.6;
+}
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+.mensagem.erro {
+  color: var(--cor-erro);
+}
+.mensagem.sucesso {
+  color: var(--cor-sucesso);
+}
+.mensagem.info {
+  color: #5f6b7a;
+}
+.linha-item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.linha-item select {
+  flex: 1;
+}
+.linha-item input {
+  width: 80px;
+}
+fieldset {
+  border: 1px solid #c5ccd6;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #e3e8ef;
+  font-size: 14px;
+}
+td button {
+  padding: 4px 8px;
+  margin-right: 4px;
+}
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--cor-principal);
+  color: #fff;
+}
+.topo nav {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+.topo .usuario {
+  font-size: 14px;
+}
+.login {
+  max-width: 360px;
+  margin: 10vh auto;
+  padding: 16px;
+}
+.login h1 {
+  text-align: center;
+}
+.login button {
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+  }
+  .grade .largo,
+  .grade .mensagem,
+  .grade .acoes {
+    grid-column: 1 / -1;
+  }
+}

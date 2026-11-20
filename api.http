@@ -1,0 +1,35 @@
+### Saúde da API (pública)
+GET http://localhost:3000/api/health
+
+### Sem token: deve responder 401
+POST http://localhost:3000/api/doadores
+Content-Type: application/json
+
+{ "nome": "Teste sem token" }
+
+### Login com senha errada: deve responder 401
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{ "email": "voluntario@exemplo.com", "senha": "errada" }
+
+### Login correto: guarda o token na variável "login"
+# @name login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{ "email": "voluntario@exemplo.com", "senha": "conectadoa123" }
+
+###
+@token = {{login.response.body.token}}
+
+### Com token: deve responder 200
+GET http://localhost:3000/api/doadores
+Authorization: Bearer {{token}}
+
+### Com token: deve responder 201
+POST http://localhost:3000/api/doadores
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "nome": "Doador do teste", "email": "teste@exemplo.com" }
